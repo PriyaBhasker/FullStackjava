@@ -14,9 +14,10 @@ import lombok.NoArgsConstructor;
 
 public class Card {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+   // @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="card_id")
-    private String id;
+    private int id;
 
     @Column(name="card_status")
     private Cardstatus cardStatus;

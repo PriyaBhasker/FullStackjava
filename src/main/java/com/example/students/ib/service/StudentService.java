@@ -16,8 +16,9 @@ public class StudentService {
     public  String addStudent(Student student){
        Card card = new Card();
        card.setCardStatus(Cardstatus.Activated);
-       card.setDues(4508);
+       card.setDues(4500);
        student.setCard(card);
+       card.setStudentVariableName(student);
         studentRepository.save(student);
         return "Student added";
 
