@@ -28,4 +28,7 @@ public class Card {
     @OneToOne
     @JoinColumn
     private Student studentVariableName;
+//    @OneToOne
+//    @JoinColumn(name = "student_id")
+//    private Student student;
 }

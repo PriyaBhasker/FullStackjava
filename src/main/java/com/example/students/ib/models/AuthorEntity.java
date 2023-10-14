@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name ="Books")
+@Table(name ="Author")
 public class AuthorEntity {
 
     @Id

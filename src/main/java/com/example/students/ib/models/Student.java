@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="prs3")
+@Table(name="student")
 public class Student {
 
 //    @Id
@@ -41,4 +41,7 @@ public class Student {
 
     @OneToOne(mappedBy = "studentVariableName", cascade = CascadeType.ALL)
     private Card card;
+
+//    @OneToOne(cascade = CascadeType.ALL,mappedBy = "student")
+//    private Card card;
 }
