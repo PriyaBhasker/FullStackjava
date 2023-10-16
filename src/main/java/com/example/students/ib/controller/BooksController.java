@@ -2,6 +2,7 @@ package com.example.students.ib.controller;
 
 
 import com.example.students.ib.DTO.BookDTO;
+import com.example.students.ib.DTO.BookResponseDTO;
 import com.example.students.ib.models.AuthorEntity;
 import com.example.students.ib.models.BookEntity;
 import com.example.students.ib.models.Student;
@@ -34,11 +35,16 @@ public class BooksController {
         return bookService.addAuthor(author);
     }
 
-    @GetMapping("/get/{id}")
-    public BookEntity getBook(@PathVariable int id) {
-        return bookRepo.findById(id).get();
+//    @GetMapping("/get/{id}")
+//    public BookEntity getBook(@PathVariable int id) {
+//        return bookRepo.findById(id).get();
+//
+//    }
+@GetMapping("/get/{id}")
+public BookResponseDTO addbook(@PathVariable int id) {
+    return bookService.getBook(id);
 
-    }
+}
 
 }
 

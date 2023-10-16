@@ -1,6 +1,7 @@
 package com.example.students.ib.service;
 
 import com.example.students.ib.DTO.BookDTO;
+import com.example.students.ib.DTO.BookResponseDTO;
 import com.example.students.ib.models.AuthorEntity;
 import com.example.students.ib.models.BookEntity;
 import com.example.students.ib.repositories.AuthorRepo;
@@ -36,8 +37,17 @@ public class BookService {
     }
 
     public AuthorEntity addAuthor(AuthorEntity author){
+
         return authorRepo.save(author);
     }
 
+    public BookResponseDTO getBook(int id){
+        BookResponseDTO responseDTO = new BookResponseDTO();
+        BookEntity entity = bookRepo.findById(id).get();
+        responseDTO.setName(entity.getName());
+        responseDTO.setGenre(entity.getGenre());
+        responseDTO.setPages(entity.getPages());
 
+        return responseDTO;
+    }
 }
