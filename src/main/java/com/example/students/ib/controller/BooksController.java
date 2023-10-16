@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.awt.print.Book;
+import java.util.List;
 
 @RestController
 @RequestMapping("/book")
@@ -35,16 +36,21 @@ public class BooksController {
         return bookService.addAuthor(author);
     }
 
-//    @GetMapping("/get/{id}")
+    //    @GetMapping("/get/{id}")
 //    public BookEntity getBook(@PathVariable int id) {
 //        return bookRepo.findById(id).get();
 //
 //    }
-@GetMapping("/get/{id}")
-public BookResponseDTO addbook(@PathVariable int id) {
-    return bookService.getBook(id);
+    @GetMapping("/get/{id}")
+    public BookResponseDTO addbook(@PathVariable int id) {
+        return bookService.getBook(id);
+
+    }
+
+    @GetMapping("/getList/{id}")
+    public List<BookDTO> getBookList(@PathVariable int id) {
+        return bookService.getBookList(id);
+
+    }
 
 }
-
-}
-

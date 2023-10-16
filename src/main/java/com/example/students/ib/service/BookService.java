@@ -50,4 +50,16 @@ public class BookService {
 
         return responseDTO;
     }
+
+    public List<BookDTO> getBookList(int id){
+        AuthorEntity author = authorRepo.findById(id).get();
+        List<BookEntity> bookEntityList = author.getBookList();
+        List<BookDTO> bookDTOList = new ArrayList<>();
+
+        for(BookEntity book:bookEntityList){
+            BookDTO dto = new BookDTO(book.getGenre(), book.getPages(),book.getName(),id);
+            bookDTOList.add(dto);
+        }
+        return  bookDTOList;
+    }
 }

@@ -20,6 +20,7 @@ public class Card {
     private int id;
 
     @Column(name="card_status")
+    @Enumerated(value = EnumType.STRING)
     private Cardstatus cardStatus;
 
     @Column(name = "dues")
